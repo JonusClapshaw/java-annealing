@@ -21,7 +21,7 @@ public class ProblemSolving {
 
     for (String string : words) {
       System.out.println(string);
-      if(string.charAt(0) != 'a'){
+      if(string.charAt(0) != 'a' && string.charAt(0) != 'A'){
         return false;
       }
     }
