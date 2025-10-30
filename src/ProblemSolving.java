@@ -38,6 +38,16 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+    if (words.isEmpty()) {
+      return false;
+    }
+
+    for (String string : words) {
+      if (string == "") {
+        return true;
+      }
+    }
+
     return false;
   }
 
@@ -50,7 +60,18 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+    if (words.isEmpty()) {
+      return 0;
+    }
+
+    int maxLength = 0;
+    for (String string : words) {
+      if (string.length() > maxLength) {
+        maxLength = string.length();
+      }
+    }
+
+    return maxLength;
   }
 
  /**
