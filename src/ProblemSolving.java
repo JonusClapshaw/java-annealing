@@ -83,7 +83,18 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
+    int min = Integer.MAX_VALUE;
     
-    return Integer.MAX_VALUE;
+    if(words.equals("")){
+      return Integer.MAX_VALUE;
+    }
+
+    for (String string : words) {
+      if(string.length() < min){
+        min = string.length();
+      }
+    }
+
+    return min;
   }
 }
