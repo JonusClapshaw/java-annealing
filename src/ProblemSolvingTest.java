@@ -127,4 +127,24 @@ public class ProblemSolvingTest {
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
 
+  @Test
+  void testminLength_findMinLength() {
+    Set<String> input = Set.of("a","happy","dog","walks","circles");
+    int actual = ProblemSolving.minLength(input);
+    assertEquals(1, actual);
+  }
+
+  @Test
+  void testminLength_findMinLengthEmpty() {
+    Set<String> input = Set.of();
+    int actual = ProblemSolving.minLength(input);
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testminLength_findMinLengthShort() {
+    Set<String> input = Set.of(""," ","   ","    ","      ");
+    int actual = ProblemSolving.minLength(input);
+    assertEquals(0, actual);
+  }
 }
