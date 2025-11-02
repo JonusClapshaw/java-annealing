@@ -83,6 +83,7 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
+    
     return Integer.MAX_VALUE;
   }
 }
