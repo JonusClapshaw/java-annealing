@@ -27,6 +27,36 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+  void testAllStartWithA_startsWithB() {
+    // arrange
+    Set<String> input = Set.of("barmadillo", "butopia", "bArcanine");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_upperAndLowerCase() {
+    // arrange
+    Set<String> input = Set.of("a", "A");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }  
+
+  @Test
+  void testAllStartWithA_isEmpty() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
@@ -146,5 +176,19 @@ public class ProblemSolvingTest {
     Set<String> input = Set.of(""," ","   ","    ","      ");
     int actual = ProblemSolving.minLength(input);
     assertEquals(0, actual);
+  }
+
+  @Test
+  void testminLength_findMinLengthWhenOneEmptyandOneLong() {
+    Set<String> input = Set.of("","wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+    int actual = ProblemSolving.minLength(input);
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testminLength_findMinLengthWhenPostiveAndNegativeNumericValues() {
+    Set<String> input = Set.of("-10000000000000", "10000000000000");
+    int actual = ProblemSolving.minLength(input);
+    assertEquals(14, actual);
   }
 }
