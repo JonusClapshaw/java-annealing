@@ -138,4 +138,18 @@ public class ProblemSolvingTest {
     int actual = ProblemSolving.minLength(input);
     assertEquals(1, actual);
   }
+
+  @Test
+  void testminLength_findMinLengthEmpty() {
+    Set<String> input = Set.of();
+    int actual = ProblemSolving.minLength(input);
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testminLength_findMinLengthShort() {
+    Set<String> input = Set.of(""," ","   ","    ","      ");
+    int actual = ProblemSolving.minLength(input);
+    assertEquals(0, actual);
+  }
 }
