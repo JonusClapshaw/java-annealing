@@ -75,21 +75,6 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
-    @Test
-  void testMaxLength_setIsEmpty() {
-    // arrange
-    Set<String> input = Set.of("");
-    // act
-    int actual = ProblemSolving.maxLength(input);
-    // assert
-    assertEquals(0, actual);
-  }
-
-
-  // TODO:
-  // Come up with more tests to thoroughly test hasEmptyString
-  // Use your creativity here!
-
 
   @Test
   void testMaxLength_multipleWords() {
@@ -120,6 +105,16 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(1, actual);
   }
+
+  @Test
+  void testMaxLength_setIsEmpty() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }  
 
 
   // TODO:
