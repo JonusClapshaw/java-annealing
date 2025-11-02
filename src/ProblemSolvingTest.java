@@ -82,4 +82,10 @@ public class ProblemSolvingTest {
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
 
+  @Test
+  void testminLength_findMinLength() {
+    Set<String> input = Set.of("a","happy","dog","walks","circles");
+    int actual = ProblemSolving.minLength(input);
+    assertEquals(1, actual);
+  }
 }
