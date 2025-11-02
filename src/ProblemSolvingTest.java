@@ -55,6 +55,36 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+  @Test
+  void testHasEmptyString_trueWhenOnlyEmptyCase() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testHasEmptyString_trueWhenCompletelyEmpty() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+    @Test
+  void testMaxLength_setIsEmpty() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
 
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
@@ -69,6 +99,26 @@ public class ProblemSolvingTest {
     int actual = ProblemSolving.maxLength(input);
     // assert
     assertEquals(9, actual);
+  }
+
+  @Test
+  void testMaxLength_oneWordOnly() {
+    // arrange
+    Set<String> input = Set.of("commodius");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(9, actual);
+  }
+
+  @Test
+  void testMaxLength_specialCharacters() {
+    // arrange
+    Set<String> input = Set.of("$", "%", "\\");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(1, actual);
   }
 
 
